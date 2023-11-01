@@ -1,0 +1,14 @@
+#Create the necessary directories for the volumes in the same directory as your docker-compose.yml
+mkdir -p wp-content
+mkdir -p db-data
+mkdir -p letsencrypt
+
+
+#Point your domain's DNS records to your server's IP address.
+#Start the Docker Compose stack:
+docker-compose up -d
+
+
+#This setup will automatically issue and renew SSL certificates using Certbot when your domain points to the server. You should be able to access your WordPress site securely with SSL. Make sure to secure your server and WordPress installation properly and regularly back up your data.
+
+#Remember to keep your Dockerfiles and Nginx configuration up to date and properly secure your server to avoid any SSL errors.
